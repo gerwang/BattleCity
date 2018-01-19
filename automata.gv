@@ -1,0 +1,19 @@
+digraph Automata {
+	edge [fontname="FangSong"];
+	node [fontname="FangSong"];
+	load[label="加载游戏界面"]
+	level[label="显示关卡界面"]
+	load -> level
+	main[label="游戏主过程"]
+	level -> main
+	main -> level[label="敌人被消灭"]
+	over[label="游戏结束界面"]
+	main -> over[label="我方战败"]
+	input[label="输入最高分"]
+	highscore[label="最高分界面"]
+	over -> {input,highscore}
+	input -> highscore
+	gameinfo[label="游戏信息界面"]
+	highscore -> gameinfo[label="7秒后"]
+	gameinfo -> highscore[label="5秒后"]
+}
