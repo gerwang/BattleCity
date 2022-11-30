@@ -1,6 +1,5 @@
 package javagames.completegame.object;
 
-import javafx.util.Pair;
 import javagames.completegame.admin.GameConstants;
 import javagames.util.Matrix3x3f;
 import javagames.util.ResourceLoader;
@@ -12,7 +11,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * Created by Gerwa on 2017/5/14.
@@ -233,13 +233,32 @@ public class GameMap {
         if (!file.createNewFile()) {
             throw new IOException();
         }
-        String map = "";
-        for (int i = 0; i < 26; i++) {
-            for (int j = 0; j < 26; j++) {
-                map += "F";
-            }
-            map += "\n";
-        }
+        String map = "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBEEBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBEEBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFFFFFFFFFBBFFBBFF\n" +
+                "FFBBFFBBFFFFFFFFFFBBFFBBFF\n" +
+                "FFFFFFFFFFWWFFWWFFFFFFFFFF\n" +
+                "FFFFFFFFFFWWFFWWFFFFFFFFFF\n" +
+                "FFFFBBBBFFFFFFFFFFBBBBFFFF\n" +
+                "EEFFBBBBFFFFFFFFFFBBBBFFEE\n" +
+                "FFFFFFFFFFBBFFBBFFFFFFFFFF\n" +
+                "FFFFFFFFFFBBBBBBFFFFFFFFFF\n" +
+                "FFBBFFBBFFBBBBBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFBBFFBBFFBBFFBBFF\n" +
+                "FFBBFFBBFFFFFFFFFFBBFFBBFF\n" +
+                "FFBBFFBBFFFFFFFFFFBBFFBBFF\n" +
+                "FFBBFFBBFFFBBBBFFFBBFFBBFF\n" +
+                "FFFFFFFFFFFBFFBFFFFFFFFFFF\n" +
+                "FFFFFFFFFFFBFFBFFFFFFFFFFF\n";
         PrintWriter out = new PrintWriter(new FileWriter(file));
         out.write(map);
         out.flush();
